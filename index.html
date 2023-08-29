@@ -83,8 +83,7 @@
         })
         .catch((err) => console.error(err));
     }
-    liff.init(
-      { liffId: "2000563749-xo0QX4Ny" },
+    liff.init({ liffId: "2000563749-xo0QX4Ny" },
       () => {
         if (liff.isLoggedIn()) {
           runApp();
