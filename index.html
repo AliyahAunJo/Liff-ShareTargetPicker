@@ -51,24 +51,6 @@
   </div>
   </div>
   <script>
-    function showFlex() {
-      var x = document.getElementById("flexjson").value;
-      try {
-        document.getElementById('flex1').innerHTML = "";
-        x = JSON.parse(x)
-        console.log(x)
-        var flexdat = {}
-        flexdat["type"] = "flex";
-        flexdat["altText"] = "Flex Message";
-        flexdat["contents"] = x;
-        flex2html("flex1", flexdat);
-      }
-      catch (err) {
-        console.log(err)
-        document.getElementById('flex1').innerHTML = "";
-      }
-    }
-
     function runApp() {
       liff
         .getProfile()
@@ -107,7 +89,25 @@
         //...
       });
     }
-
+    
+    function showFlex() {
+      var x = document.getElementById("flexjson").value;
+      try {
+        document.getElementById('flex1').innerHTML = "";
+        x = JSON.parse(x)
+        console.log(x)
+        var flexdat = {}
+        flexdat["type"] = "flex";
+        flexdat["altText"] = "Flex Message";
+        flexdat["contents"] = x;
+        flex2html("flex1", flexdat);
+      }
+      catch (err) {
+        console.log(err)
+        document.getElementById('flex1').innerHTML = "";
+      }
+    }
+    
     function myFunction() {
       var altText = document.getElementById("alt").value;
       var message = document.getElementById("flexjson").value;
