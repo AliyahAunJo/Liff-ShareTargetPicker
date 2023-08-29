@@ -53,7 +53,7 @@
 *::before {
   box-sizing: inherit;
 }
-/* body, */
+body,
 html {
   background-color: black;
 } *
