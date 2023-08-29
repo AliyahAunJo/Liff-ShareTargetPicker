@@ -47,36 +47,28 @@
     <p class="mt-5 text-white" id="demo"></p>
     <hr class="text-white" />
     <p class="text-white">❤️ พัฒนาโดย ครูอั๋นใจดี ❤️</p>
-    <br/>
+    <br />
   </div>
   </div>
+  <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
   <script>
+
     function runApp() {
-      liff
-        .getProfile()
-        .then((profile) => {
-          document.getElementById("pictureUrl").src = profile.pictureUrl; // %u0E41%u0E2A%u0E14%u0E07%u0E23%u0E39%u0E1B Profile %u0E17%u0E35%u0E48%u0E14%u0E36%u0E07%u0E21%u0E32
-          document.getElementById("userId").innerHTML =
-            "<b>UserId:</b><br/> " + profile.userId;
-          document.getElementById("displayName").innerHTML =
-            "<b>สวัสดี:</b><br/> " + profile.displayName; // %u0E41%u0E2A%u0E14%u0E07%u0E0A%u0E37%u0E48%u0E2D Line %u0E02%u0E2D%u0E07%u0E1C%u0E39%u0E49%u0E43%u0E0A%u0E49
-          document.getElementById("statusMessage").innerHTML =
-            "<b>StatusMessage:</b></br> " + profile.statusMessage; // %u0E41%u0E2A%u0E14%u0E07%u0E2A%u0E16%u0E32%u0E19%u0E30%u0E02%u0E2D%u0E07%u0E1C%u0E39%u0E49%u0E43%u0E0A%u0E49 Line
-          //document.getElementById("getDecodedIDToken").innerHTML = '<b>Email:</b> ' + liff.getDecodedIDToken().email;
-        })
-        .catch((err) => console.error(err));
+      liff.getProfile().then(profile => {
+        document.getElementById("pictureUrl").src = profile.pictureUrl;  // %u0E41%u0E2A%u0E14%u0E07%u0E23%u0E39%u0E1B Profile %u0E17%u0E35%u0E48%u0E14%u0E36%u0E07%u0E21%u0E32
+        document.getElementById("userId").innerHTML = '<b>UserId:</b> ' + profile.userId;
+        document.getElementById("displayName").innerHTML = '<b>สวัสดี:</b> ' + profile.displayName; // %u0E41%u0E2A%u0E14%u0E07%u0E0A%u0E37%u0E48%u0E2D Line %u0E02%u0E2D%u0E07%u0E1C%u0E39%u0E49%u0E43%u0E0A%u0E49
+        document.getElementById("statusMessage").innerHTML = '<b>StatusMessage:</b> ' + profile.statusMessage;  // %u0E41%u0E2A%u0E14%u0E07%u0E2A%u0E16%u0E32%u0E19%u0E30%u0E02%u0E2D%u0E07%u0E1C%u0E39%u0E49%u0E43%u0E0A%u0E49 Line
+        //document.getElementById("getDecodedIDToken").innerHTML = '<b>Email:</b> ' + liff.getDecodedIDToken().email;
+      }).catch(err => console.error(err));
     }
-    
-    liff.init({ liffId: "2000563749-xo0QX4Ny" },
-      () => {
-        if (liff.isLoggedIn()) {
-          runApp();
-        } else {
-          liff.login();
-        }
-      },
-      (err) => console.error(err.code, error.message)
-    );
+    liff.init({ liffId: "2000563749-xo0QX4Ny" }, () => { // เปลี่ยน LIFF ID 
+      if (liff.isLoggedIn()) {
+        runApp()
+      } else {
+        liff.login();
+      }
+    }, err => console.error(err.code, error.message));
 
     // logout
     const accessToken = liff.getAccessToken();
@@ -84,12 +76,13 @@
       fetch("https://api...", {
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${accessToken}`,
-        },
+          Authorization: `Bearer ${accessToken}`
+        }
         //...
       });
     }
-    
+
+
     function showFlex() {
       var x = document.getElementById("flexjson").value;
       try {
@@ -107,7 +100,7 @@
         document.getElementById('flex1').innerHTML = "";
       }
     }
-    
+
     function myFunction() {
       var altText = document.getElementById("alt").value;
       var message = document.getElementById("flexjson").value;
@@ -117,12 +110,12 @@
       // liff.id equals to liffId
       liff.ready.then(() => {
         liff.shareTargetPicker([
-            {
-              type: "flex",
-              altText: altText,
-              contents: JSON.parse(message),
-            },
-          ])
+          {
+            type: "flex",
+            altText: altText,
+            contents: JSON.parse(message),
+          },
+        ])
           .then(() => {
             Swal.fire({
               position: "center",
