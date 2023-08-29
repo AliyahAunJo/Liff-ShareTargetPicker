@@ -47,6 +47,7 @@
     <p class="mt-5 text-white" id="demo"></p>
     <hr class="text-white" />
     <p class="text-white">❤️ พัฒนาโดย ครูอั๋นใจดี ❤️</p>
+    <br/>
   </div>
   </div>
   <script>
@@ -83,6 +84,7 @@
         })
         .catch((err) => console.error(err));
     }
+    
     liff.init({ liffId: "2000563749-xo0QX4Ny" },
       () => {
         if (liff.isLoggedIn()) {
@@ -114,8 +116,7 @@
       liff.init({ liffId: "2000563749-xo0QX4Ny" });
       // liff.id equals to liffId
       liff.ready.then(() => {
-        liff
-          .shareTargetPicker([
+        liff.shareTargetPicker([
             {
               type: "flex",
               altText: altText,
