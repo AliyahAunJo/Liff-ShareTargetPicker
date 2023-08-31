@@ -267,7 +267,43 @@
             Swal.fire({
               position: "center",
               icon: "success",
-              title: "ส่งภาพเรียบร้อย !",
+              title: "ส่งวิดีโอเรียบร้อย !",
+              showConfirmButton: false,
+              timer: 1500,
+            });
+            document.getElementById("textBox1").value = "";
+            document.getElementById("textBox2").value = "";
+
+            console.log("message sent");
+          })
+          .catch((err) => {
+            console.log("error", err);
+          });
+      });
+    }
+
+    //จบฟังก์ชั่น
+    function sendLocation() {
+      var lat = document.getElementById("textBox1").value;
+      var lon = document.getElementById("textBox2").value
+
+      liff.init({ liffId: "2000563749-xo0QX4Ny" });
+      // liff.id equals to liffId
+      liff.ready.then(() => {
+        liff.shareTargetPicker([
+          {
+            "type": "location",
+            "title": "คุณได้รับโลเคชั่น จากฉันแล้ว...",
+            "address": "ที่อยู่นี้สามารถดูได้จากแผนที่",
+            "latitude": lat,
+            "longitude": lon
+          },
+        ])
+          .then(() => {
+            Swal.fire({
+              position: "center",
+              icon: "success",
+              title: "ส่งโลเคชั่นเรียบร้อย !",
               showConfirmButton: false,
               timer: 1500,
             });
