@@ -59,12 +59,12 @@
     </button>
     <br />
     <label id="label1" class="text-white mb-3" for="">Alt text</label>
-    <input class="form-control mb-3" type="text" name="" id="alt" width="30px
+    <input class="form-control mb-3" type="text" name="" id="textBox1" width="30px
     " />
 
     <label id="label2" class="text-white mb-3" for=""> Flex Message</label>
 
-    <textarea class="form-control" id="flexjson" rows="20px" cols="30px" onchange="showFlex()"></textarea>
+    <textarea class="form-control" id="textBox2" rows="20px" cols="30px" onchange="showFlex()"></textarea>
     <br />
 
     <div class="chatbox mt-3 mb-3">
@@ -73,10 +73,13 @@
     <p class="mb-3 mt-3 text-white">กดปุ่มเพื่อส่ง Flex ไปหาเพื่อนของคุณ</p>
 
     <button class="btn btn-outline-info" type="button" onclick="myFunction()">
-      ส่ง Flex ทันที
+      ส่ง Flex
     </button>
     <button class="btn btn-outline-warning" type="button" onclick="sendText()">
-      ส่ง ข้อความ ทันที
+      ส่ง ข้อความ
+    </button>
+    <button class="btn btn-outline-success" type="button" onclick="sendImage()">
+      ส่ง รูปภาพ
     </button>
 
 
@@ -121,7 +124,7 @@
 
 
     function showFlex() {
-      var x = document.getElementById("flexjson").value;
+      var x = document.getElementById("textBox2").value;
       try {
         document.getElementById('flex1').innerHTML = "";
         x = JSON.parse(x)
@@ -139,8 +142,8 @@
     }
 
     function myFunction() {
-      var altText = document.getElementById("alt").value;
-      var message = document.getElementById("flexjson").value;
+      var altText = document.getElementById("textBox1").value;
+      var message = document.getElementById("textBox2").value;
       // document.getElementById("demo").innerHTML = message;
 
       liff.init({ liffId: "2000563749-xo0QX4Ny" });
@@ -161,8 +164,8 @@
               showConfirmButton: false,
               timer: 1500,
             });
-            document.getElementById("alt").value = "";
-            document.getElementById("flexjson").value = "";
+            document.getElementById("textBox1").value = "";
+            document.getElementById("textBox2").value = "";
 
             console.log("message sent");
           })
@@ -173,7 +176,7 @@
     }
     //จบฟังก์ชั่น
     function sendText() {
-      var textUser = document.getElementById("flexjson").value
+      var textUser = document.getElementById("textBox2").value
 
       liff.init({ liffId: "2000563749-xo0QX4Ny" });
       // liff.id equals to liffId
@@ -192,8 +195,8 @@
               showConfirmButton: false,
               timer: 1500,
             });
-            document.getElementById("alt").value = "";
-            document.getElementById("flexjson").value = "";
+            document.getElementById("textBox1").value = "";
+            document.getElementById("textBox2").value = "";
 
             console.log("message sent");
           })
@@ -202,6 +205,41 @@
           });
       });
     }
+
+    //จบฟังก์ชั่น
+    function sendImage() {
+      var link1 = document.getElementById("textBox1").value;
+      var link2 = document.getElementById("textBox2").value
+
+      liff.init({ liffId: "2000563749-xo0QX4Ny" });
+      // liff.id equals to liffId
+      liff.ready.then(() => {
+        liff.shareTargetPicker([
+          {
+            "type": "image",
+            "originalContentUrl": link1,
+            "previewImageUrl": link2
+          },
+        ])
+          .then(() => {
+            Swal.fire({
+              position: "center",
+              icon: "success",
+              title: "ส่งภาพเรียบร้อย !",
+              showConfirmButton: false,
+              timer: 1500,
+            });
+            document.getElementById("textBox1").value = "";
+            document.getElementById("textBox1").value = "";
+
+            console.log("message sent");
+          })
+          .catch((err) => {
+            console.log("error", err);
+          });
+      });
+    }
+
 
     function goSimulator() {
       liff.openWindow({
