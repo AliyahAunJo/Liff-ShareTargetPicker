@@ -12,86 +12,97 @@
 
   <style>
     body {
-      box-sizing: border-box;
-      border: 1px solid;
-      margin: 30px 30px;
-      box-decoration-break: unset;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 15px;
-      background-color: rgb(12, 131, 142);
-      overflow: hidden;
+      /* box-sizing: border-box; */
+      /* border: 1px solid; */
+      /* margin: 30px 30px; */
+      /* box-decoration-break: unset; */
+      /* display: flex; */
+      /* align-items: center; */
+      /* justify-content: center; */
+      /* border-radius: 15px; */
+      background-color: rgb(55, 58, 236);
+      /* overflow: hidden;  */
     }
 
     input {
+      width: 30px;
       border-radius: 5px;
       box-shadow: 1px 1px 10px 0.5px grey;
     }
 
     #label1 {
-      margin-left: -235px;
+      margin-left: 0px;
     }
 
     #label2 {
-      margin-left: -190px;
+      margin-left: 0px;
     }
   </style>
 
 </head>
 
 <body>
-  <div class="container text-center">
-    <img id="pictureUrl" class="img-circle mb-2 mt-3" alt="Cinque Terre" width="50" height="50" />
-    <p class="text-white mb-2" id="userId"></p>
-    <center>
-      <p class="text-white mb-2" id="displayName"></p>
-    </center>
-    <p class="text-white mb-2" id="statusMessage"></p>
-    <p class="text-white mb-2" id="getDecodedIDToken"></p>
-    <h2 class="mt-3 text-white">❤️ ShareTargetPicker Message ❤️</h2>
-    <button class="btn btn-outline-danger mb-3 text-white" onclick="goSimulator()">
-      ไปที่ Flex Simulator
-    </button>
-    <br />
-    <label id="label1" class="text-white mb-3" for="">ข้อมูลที่ 1</label>
-    <input class="form-control mb-3" type="text" name="" id="textBox1" width="30px
-    " />
+  <div class="container">
+    <form class="form-control-sm">
 
-    <label id="label2" class="text-white mb-3" for="">ข้อมูลที่ 2</label>
-
-    <input type="text" class="form-control" id="textBox2" width="30px" onchange="showFlex()">
-    <br />
-
-    <div class="chatbox mt-3 mb-3">
-      <div id="flex1"></div>
-    </div>
-    <p class="mb-3 mt-3 text-white">กดปุ่มเพื่อส่งไปหาเพื่อนของคุณ</p>
-    <div class="row">
-      <button class="btn btn-info mb-3" type="button" onclick="myFunction()">
-        ส่ง Flex
+      <img id="pictureUrl" class="img-circle mb-2 mt-3" alt="Cinque Terre" width="50" height="50" />
+      <p class="text-white mb-2" id="userId"></p>
+      <center>
+        <p class="text-white mb-2" id="displayName"></p>
+      </center>
+      <p class="text-white mb-2" id="statusMessage"></p>
+      <p class="text-white mb-2" id="getDecodedIDToken"></p>
+      <h2 class="mt-3 text-white">❤️ ShareTargetPicker ❤️</h2>
+      <button style="background-color: rgb(7, 170, 207);" class="btn btn-outline-danger mb-3 text-white"
+        onclick="goSimulator()">
+        ไปที่ Flex Simulator
       </button>
-      <button class="btn btn-warning mb-3" type="button" onclick="sendText()">
-        ส่ง ข้อความ
-      </button>
-      <button class="btn btn-success mb-3" type="button" onclick="sendImage()">
-        ส่ง รูปภาพ
-      </button>
-      <button class="btn btn-dark mb-3" type="button" onclick="sendVideo()">
-        ส่ง วิดีโอ
-      </button>
-      <button class="btn btn-primary mb-3" type="button" onclick="sendLocation()">
-        ส่ง โลเคชั่น
-      </button>
-    </div>
+      <br />
+      <label id="label1" class="text-white mb-3" for="">ข้อมูลที่ 1</label>
+      <input class="form-control mb-3 row=3" type="text" name="" id="textBox1" width="30px
+      " />
+
+      <label id="label2" class="text-white mb-3" for="">ข้อมูลที่ 2</label>
+
+      <input type="text" class="form-control" id="textBox2" width="30px" onchange="showFlex()">
+      <br />
+
+      <div class="chatbox mt-3 mb-3 form-control">
+        <div class="mt-4" id="flex1" style="width: 325px" ;></div>
+      </div>
+      <p class=" mb-3 mt-3 text-white">กดปุ่มเพื่อส่งไปหาเพื่อนของคุณ</p>
+      <div class="">
+        <button class="btn btn-danger mb-3" type="button" onclick="myFunction()">
+          ส่ง Flex
+        </button>
+        <button style="background-color: rgb(7, 207, 80);" class="btn btn-success mb-3" type="button"
+          onclick="sendText()">
+          ส่ง ข้อความ
+        </button>
+        <button style="background-color: rgb(162, 80, 255);" class="btn btn-success mb-3" type="button"
+          onclick="sendImage()">
+          ส่ง รูปภาพ
+        </button>
+        <button style="background-color: rgb(249, 48, 225);" class="btn btn-success mb-3" type="button"
+          onclick="sendVideo()">
+          ส่ง วิดีโอ
+        </button>
+        <button style="background-color: rgb(239, 129, 26);" class="btn btn-primary mb-3" type="button"
+          onclick="sendLocation()">
+          ส่ง โลเคชั่น
+        </button>
+    </form>
+  </div>
 
 
 
 
-    <p class="mt-5 text-white" id="demo"></p>
-    <hr class="text-white" />
+  <p class="mt-5 text-white" id="demo"></p>
+  <hr class="text-white" />
+  <center>
     <p class="text-white">❤️ พัฒนาโดย ครูอั๋นใจดี ❤️</p>
-    <br />
+  </center>
+  <br />
   </div>
 
   <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
