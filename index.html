@@ -70,6 +70,9 @@
       <div class="chatbox">
         <div class="" id="flex1"></div>
       </div>
+
+      <div style="background-color: white; padding: 10px; border-radius: 5px;" class="mt-3" id="showtext"></div>
+
       <p class=" mb-3 mt-3 text-white">กดปุ่มเพื่อส่งไปหาเพื่อนของคุณ</p>
       <div class="">
         <button class="btn btn-danger mb-3" type="button" onclick="myFunction()">
@@ -95,8 +98,6 @@
   </div>
 
 
-
-
   <p class="mt-5 text-white" id="demo"></p>
   <hr class="text-white" />
   <center>
@@ -104,6 +105,9 @@
   </center>
   <br />
   </div>
+
+
+
 
   <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
   <script>
@@ -140,6 +144,7 @@
 
     function showFlex() {
       var x = document.getElementById("textBox2").value;
+      var text = document.getElementById("textBox2").value;
       try {
         document.getElementById('flex1').innerHTML = "";
         x = JSON.parse(x)
@@ -154,7 +159,25 @@
         console.log(err)
         document.getElementById('flex1').innerHTML = "";
       }
+
+      var src = document.getElementById("textBox2").value
+      show_image(src);
+      showtext(text)
     }
+
+    function showtext(text) {
+      document.getElementById('showtext').innerHTML = text;
+    }
+
+    function show_image(src) {
+      var img = document.createElement("img");
+      img.src = src;
+      // img.width = 
+      // img.height = 
+      document.getElementById("flex1").appendChild(img);
+      // document.body.appendChild(img);
+    }
+    //จบฟังก์ชั่น
 
     function myFunction() {
       var altText = document.getElementById("textBox1").value;
@@ -190,6 +213,8 @@
       });
     }
     //จบฟังก์ชั่น
+
+
     function sendText() {
       var textUser = document.getElementById("textBox2").value
 
@@ -340,3 +365,25 @@
 </body>
 
 </html>
+
+
+
+<!-- แสดงรูป -->
+<!-- <input id="img" type="text" onchange="addImage();">
+<div id="imageshow"></div>
+<script>
+  function addImage() {
+
+    var src = document.getElementById("textbox2").value
+    show_image(src);
+  }
+
+
+  function show_image(src) {
+    var img = document.createElement("img");
+    img.src = src;
+    document.body.appendChild(img);
+  }
+</script> -->
+
+<!--  -->
