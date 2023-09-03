@@ -49,6 +49,18 @@
       border: 1px;
       border-radius: 5px;
     }
+
+    button {
+      border: none;
+      color: white;
+      padding: 40px 40px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 1px 3px;
+      width: 105px;
+    }
   </style>
 
 </head>
@@ -64,9 +76,9 @@
       <p class="text-white mb-2" id="statusMessage"></p>
       <p class="text-white mb-2" id="getDecodedIDToken"></p>
       <h2 class="mt-3 text-white">❤️ ShareTargetPicker ❤️</h2>
-      <button style="background-color: rgb(7, 170, 207);" class="btn btn-outline-danger mb-3 text-white"
+      <button style="background-color: rgb(7, 170, 207); width: auto;" class="btn btn-outline-danger mb-3 text-white"
         onclick="goSimulator()">
-        ไปที่ Flex Simulator
+        Flex Simulator
       </button>
       <br />
       <label id="label1" class="text-white mb-3" for="">ข้อมูลที่ 1</label>
@@ -84,34 +96,42 @@
       </div>
 
 
-      <div style="background-color: white; padding: 10px; border-radius: 5px;" class="mt-3" id="showtext"></div>
+      <div style="background-color: white; padding: 10px; border-radius: 5px;" class="mt-3 form-control" id="showtext"
+        readonly></div>
 
       <p class=" mb-3 mt-3 text-white">กดปุ่มเพื่อส่งไปหาเพื่อนของคุณ</p>
-      <div class="">
-        <button id="img-btn" class="btn btn-danger mb-3" type="button" onclick="show_image()">
-          ดูภาพตัวอย่าง
+      <div class="align-content-around">
+        <button style="background-color: rgb(123, 32, 175);" id="img-btn" class="btn btn-danger mb-3" type="button"
+          onclick="show_image()">
+          Show Img
         </button>
-        <button id="flex-btn" class="btn btn-danger mb-3" type="button" onclick="showFlex()">
-          ดูFlexตัวอย่าง
+        <button style="background-color: rgb(8, 156, 156);" id="flex-btn" class="btn btn-danger mb-3" type="button"
+          onclick="showFlex()">
+          Show Flex
         </button>
+        <button style="background-color: rgb(176, 11, 124);" id="flex-btn" class="btn btn-danger mb-3" type="button"
+          onclick="showText()">
+          Show Text
+        </button>
+
         <button class="btn btn-danger mb-3" type="button" onclick="myFunction()">
-          ส่ง Flex
+          Send Flex
         </button>
         <button style="background-color: rgb(7, 207, 80);" class="btn btn-success mb-3" type="button"
           onclick="sendText()">
-          ส่ง ข้อความ
+          Send Text
         </button>
         <button style="background-color: rgb(162, 80, 255);" class="btn btn-success mb-3" type="button"
           onclick="sendImage()">
-          ส่ง รูปภาพ
+          Send Img
         </button>
         <button style="background-color: rgb(249, 48, 225);" class="btn btn-success mb-3" type="button"
           onclick="sendVideo()">
-          ส่ง วิดีโอ
+          Send Vdo
         </button>
         <button style="background-color: rgb(239, 129, 26);" class="btn btn-primary mb-3" type="button"
           onclick="sendLocation()">
-          ส่ง โลเคชั่น
+          Send Loc
         </button>
     </form>
   </div>
@@ -163,7 +183,6 @@
 
     function showFlex() {
       var x = document.getElementById("textBox2").value;
-      var text = document.getElementById("textBox2").value;
       try {
         document.getElementById('flex1').innerHTML = "";
         x = JSON.parse(x)
@@ -178,11 +197,10 @@
         console.log(err)
         document.getElementById('flex1').innerHTML = "";
       }
-      showtext(text)
-
     }
 
-    function showtext(text) {
+    function showText() {
+      var text = document.getElementById("textBox2").value;
       document.getElementById('showtext').innerHTML = text;
     }
 
@@ -195,9 +213,6 @@
       img.setAttribute('width', '100%')
       document.getElementById("flex1").appendChild(img);
       // document.body.appendChild(img);
-      showtext(text)
-
-
     }
     //จบฟังก์ชั่น
 
