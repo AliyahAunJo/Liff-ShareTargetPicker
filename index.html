@@ -37,6 +37,18 @@
     #label2 {
       margin-left: 0px;
     }
+
+    .showImg {
+      max-width: 100%;
+      max-height: 100%;
+      display: contents;
+    }
+
+    .chatbox {
+      width: auto;
+      border: 1px;
+      border-radius: 5px;
+    }
   </style>
 
 </head>
@@ -68,7 +80,7 @@
       <br />
 
       <div class="chatbox">
-        <div class="" id="flex1"></div>
+        <div class="showImg" id="flex1"></div>
       </div>
 
       <div style="background-color: white; padding: 10px; border-radius: 5px;" class="mt-3" id="showtext"></div>
@@ -172,8 +184,8 @@
     function show_image(src) {
       var img = document.createElement("img");
       img.src = src;
-      // img.width = 
-      // img.height = 
+      // img.width = 350
+      // img.height = 350
       document.getElementById("flex1").appendChild(img);
       // document.body.appendChild(img);
     }
