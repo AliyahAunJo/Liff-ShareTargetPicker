@@ -66,133 +66,135 @@
 </head>
 
 <body>
-    <div class="container">
-        <form class="form-control-sm">
-            <center>
-                <img id="pictureUrl" class="img-circle mb-2 mt-3" alt="Cinque Terre" width="50" height="50" />
-                <p class="text-white mb-2" id="displayName"></p>
-            </center>
-            <p class="text-white mb-2" id="userId"></p>
-            <p class="text-white mb-2" id="statusMessage"></p>
-            <p class="text-white mb-2" id="getDecodedIDToken"></p>
-            <h2 class="mt-3 text-white">❤️ SendMessages ❤️</h2>
-            <button style="background-color: rgb(7, 170, 207); width: auto;"
-                class="btn btn-outline-danger mb-3 text-white" onclick="goSimulator()">
-                Flex Simulator
-            </button>
-            <br />
-            <label id="label1" class="text-white mb-3" for="">ข้อมูลที่ 1</label>
-            <input class="form-control mb-3 row=3" type="text" name="" id="textBox1" width="30px
+  <div class="container">
+    <form class="form-control-sm">
+      <center>
+        <img id="pictureUrl" class="img-circle mb-2 mt-3" alt="Cinque Terre" width="50" height="50" />
+        <p class="text-white mb-2" id="displayName"></p>
+      </center>
+      <p class="text-white mb-2" id="userId"></p>
+      <p class="text-white mb-2" id="statusMessage"></p>
+      <p class="text-white mb-2" id="getDecodedIDToken"></p>
+      <h2 class="mt-3 text-white">❤️ ShareTargetPicker ❤️</h2>
+      <button style="background-color: rgb(7, 170, 207); width: auto;" class="btn btn-outline-danger mb-3 text-white"
+        onclick="goSimulator()">
+        Flex Simulator
+      </button>
+      <br />
+      <label id="label1" class="text-white mb-3" for="">ข้อมูลที่ 1</label>
+      <input class="form-control mb-3 row=3" type="text" name="" id="textBox1" width="30px
       " />
 
-            <label id="label2" class="text-white mb-3" for="">ข้อมูลที่ 2</label>
+      <label id="label2" class="text-white mb-3" for="">ข้อมูลที่ 2</label>
 
-            <textarea class="form-control" id="textBox2" width="30px"></textarea>
+      <textarea class="form-control" id="textBox2" width="30px"></textarea>
 
-            <br />
+      <br />
 
-            <div class=" chatbox">
-                <div class="showImg" id="flex1"></div>
-            </div>
-
-
-            <div style="background-color: white; padding: 10px; border-radius: 5px;" class="mt-3 form-control"
-                id="showtext" readonly></div>
-
-            <p class=" mb-3 mt-3 text-white">กดปุ่มเพื่อส่งไปหาเพื่อนของคุณ</p>
-            <div class="align-content-around">
-                <button style="background-color: rgb(123, 32, 175);" id="img-btn" class="btn btn-danger mb-3"
-                    type="button" onclick="show_image()">
-                    Show Img
-                </button>
-                <button style="background-color: rgb(8, 156, 156);" id="flex-btn" class="btn btn-danger mb-3"
-                    type="button" onclick="showFlex()">
-                    Show Flex
-                </button>
-                <button style="background-color: rgb(176, 11, 124);" id="flex-btn" class="btn btn-danger mb-3"
-                    type="button" onclick="showText()">
-                    Show Text
-                </button>
-                <button style="background-color: rgb(162, 80, 255);" class="btn btn-success mb-3" type="button"
-                    onclick="sendImage()">
-                    Send Img
-                </button>
-
-                <button class="btn btn-danger mb-3" type="button" onclick="myFunction()">
-                    Send Flex
-                </button>
-                <button style="background-color: rgb(7, 207, 80);" class="btn btn-success mb-3" type="button"
-                    onclick="sendText()">
-                    Send Text
-                </button>
-
-                <button style="background-color: rgb(249, 48, 225);" class="btn btn-success mb-3" type="button"
-                    onclick="sendVideo()">
-                    Send Vdo
-                </button>
-                <button style="background-color: rgb(239, 129, 26);" class="btn btn-primary mb-3" type="button"
-                    onclick="sendLocation()">
-                    Send Lo
-                </button>
-                <button style="background-color: rgb(29, 20, 148);" class="btn btn-primary mb-3" type="button"
-                    onclick="scanQrCode()">
-                    Scan QR
-                </button>
-        </form>
-    </div>
+      <div class=" chatbox">
+        <div class="showImg" id="flex1"></div>
+      </div>
 
 
-    <p class="mt-5 text-white" id="demo"></p>
-    <hr class="text-white" />
-    <center>
-        <p class="text-white">❤️ พัฒนาโดย ครูอั๋นใจดี ❤️</p>
-    </center>
-    <br />
-    </div>
+      <div style="background-color: white; padding: 10px; border-radius: 5px;" class="mt-3 form-control" id="showtext"
+        readonly></div>
+
+      <p class=" mb-3 mt-3 text-white">กดปุ่มเพื่อส่งไปหาเพื่อนของคุณ</p>
+      <div class="align-content-around">
+        <button style="background-color: rgb(123, 32, 175);" id="img-btn" class="btn btn-danger mb-3" type="button"
+          onclick="show_image()">
+          Show Img
+        </button>
+        <button style="background-color: rgb(8, 156, 156);" id="flex-btn" class="btn btn-danger mb-3" type="button"
+          onclick="showFlex()">
+          Show Flex
+        </button>
+        <button style="background-color: rgb(176, 11, 124);" id="flex-btn" class="btn btn-danger mb-3" type="button"
+          onclick="showText()">
+          Show Text
+        </button>
+        <button style="background-color: rgb(162, 80, 255);" class="btn btn-success mb-3" type="button"
+          onclick="sendImage()">
+          Send Img
+        </button>
+        <button class="btn btn-danger mb-3" type="button" onclick="myFunction()">
+          Send Flex
+        </button>
+        <button style="background-color: rgb(7, 207, 80);" class="btn btn-success mb-3" type="button"
+          onclick="sendText()">
+          Send Text
+        </button>
+
+        <button style="background-color: rgb(249, 48, 225);" class="btn btn-success mb-3" type="button"
+          onclick="sendVideo()">
+          Send Vdo
+        </button>
+        <button style="background-color: rgb(239, 129, 26);" class="btn btn-primary mb-3" type="button"
+          onclick="sendLocation()">
+          Send Loc
+        </button>
+        <button style="background-color: rgb(29, 20, 148);" class="btn btn-primary mb-3" type="button"
+          onclick="scanQrCode()">
+          Scan QR
+        </button>
+    </form>
+  </div>
+
+
+  <p class="mt-5 text-white" id="demo"></p>
+  <hr class="text-white" />
+  <center>
+    <p class="text-white">❤️ พัฒนาโดย ครูอั๋นใจดี ❤️</p>
+  </center>
+  <br />
+  </div>
+
+
+
 
   <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
   <script>
 
-    function runApp() {
-      liff.getProfile().then(profile => {
-        document.getElementById("pictureUrl").src = profile.pictureUrl;  // %u0E41%u0E2A%u0E14%u0E07%u0E23%u0E39%u0E1B Profile %u0E17%u0E35%u0E48%u0E14%u0E36%u0E07%u0E21%u0E32
-        document.getElementById("userId").innerHTML = '<b>UserId:</b> ' + profile.userId;
-        document.getElementById("displayName").innerHTML = '<b>สวัสดี:</b> ' + profile.displayName; // %u0E41%u0E2A%u0E14%u0E07%u0E0A%u0E37%u0E48%u0E2D Line %u0E02%u0E2D%u0E07%u0E1C%u0E39%u0E49%u0E43%u0E0A%u0E49
-        document.getElementById("statusMessage").innerHTML = '<b>StatusMessage:</b> ' + profile.statusMessage;  // %u0E41%u0E2A%u0E14%u0E07%u0E2A%u0E16%u0E32%u0E19%u0E30%u0E02%u0E2D%u0E07%u0E1C%u0E39%u0E49%u0E43%u0E0A%u0E49 Line
-        //document.getElementById("getDecodedIDToken").innerHTML = '<b>Email:</b> ' + liff.getDecodedIDToken().email;
-      }).catch(err => console.error(err));
-    }
-    liff.init({ liffId: "2000563749-xo0QX4Ny" }, () => { // เปลี่ยน LIFF ID 
-      if (liff.isLoggedIn()) {
-        runApp()
-      } else {
-        liff.login();
-      }
-    }, err => console.error(err.code, error.message));
+    // function runApp() {
+    //   liff.getProfile().then(profile => {
+    //     document.getElementById("pictureUrl").src = profile.pictureUrl;  // %u0E41%u0E2A%u0E14%u0E07%u0E23%u0E39%u0E1B Profile %u0E17%u0E35%u0E48%u0E14%u0E36%u0E07%u0E21%u0E32
+    //     document.getElementById("userId").innerHTML = '<b>UserId:</b> ' + profile.userId;
+    //     document.getElementById("displayName").innerHTML = '<b>สวัสดี:</b> ' + profile.displayName; // %u0E41%u0E2A%u0E14%u0E07%u0E0A%u0E37%u0E48%u0E2D Line %u0E02%u0E2D%u0E07%u0E1C%u0E39%u0E49%u0E43%u0E0A%u0E49
+    //     document.getElementById("statusMessage").innerHTML = '<b>StatusMessage:</b> ' + profile.statusMessage;  // %u0E41%u0E2A%u0E14%u0E07%u0E2A%u0E16%u0E32%u0E19%u0E30%u0E02%u0E2D%u0E07%u0E1C%u0E39%u0E49%u0E43%u0E0A%u0E49 Line
+    //     //document.getElementById("getDecodedIDToken").innerHTML = '<b>Email:</b> ' + liff.getDecodedIDToken().email;
+    //   }).catch(err => console.error(err));
+    // }
+    // liff.init({ liffId: "2000563749-xo0QX4Ny" }, () => { // เปลี่ยน LIFF ID 
+    //   if (liff.isLoggedIn()) {
+    //     runApp()
+    //   } else {
+    //     liff.login();
+    //   }
+    // }, err => console.error(err.code, error.message));
 
-    // logout
-    const accessToken = liff.getAccessToken();
-    if (accessToken) {
-      fetch("https://api...", {
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${accessToken}`
-        }
-        //...
-      });
-    }
+    // // logout
+    // const accessToken = liff.getAccessToken();
+    // if (accessToken) {
+    //   fetch("https://api...", {
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //       Authorization: `Bearer ${accessToken}`
+    //     }
+    //     //...
+    //   });
+    // }
 
     async function scanQrCode() {
-            const result = await liff.scanCodeV2()
-            document.getElementById("textBox2").append(result.value)
-            Swal.fire({
-                position: "center",
-                icon: "success",
-                title: "Scan เรียบร้อย !",
-                showConfirmButton: false,
-                timer: 1500,
-            });
-        }
+      const result = await liff.scanCodeV2()
+      document.getElementById("textBox2").append(result.value)
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Scan เรียบร้อย !",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    }
 
     function showFlex() {
       var x = document.getElementById("textBox2").value;
